@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(90deg,rgba(0,0,0,.3), rgba(0,0,0,1)),url("https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg");
+  background-size: cover;
+}
+
+.tableStud{
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur((4px));
+  font-size: 22px;
+  text-align:center;
+}
+
+.formStud{
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur((4px));
+  font-size: 22px;
+  text-align:center;
+}
