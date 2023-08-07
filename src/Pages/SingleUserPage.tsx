@@ -1,13 +1,14 @@
+import React from 'react'
 import Header from '../components/Header'
-import StudentTable from '../components/StudentTable'
 import '../index.css'
+import SingleCard from '../components/SingleCard'
 
-export default function Homepage() {
+export default function SingleUserPage() {
   return (
     <div>
         <Header />
         <div className="container">
-        <StudentTable />
+        <SingleCard />
         </div>
     </div>
   )

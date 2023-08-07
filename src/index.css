@@ -4,17 +4,40 @@ body {
 }
 
 .tableStud{
-  padding: 10px;
+  width: 70vw;
+  height: 60vh;
+  text-align: center;
+  overflow-y:scroll ;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur((4px));
   font-size: 22px;
   text-align:center;
+  border-radius: 32px;
+}
+.tableStud::-webkit-scrollbar {
+  width: 8px;
+}
+.tableStud::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.tableStud::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-.formStud{
-  padding: 10px;
+
+.container{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+}
+
+.cardView {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur((4px));
-  font-size: 22px;
-  text-align:center;
+  border-radius: 32px;
+  padding: 15px;
+  font-size: 30px;
 }

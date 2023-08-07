@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import '../index.css'
+import { Link, useParams } from 'react-router-dom'
 
 export default function StudentTable() {
     const [student, setStudent] = React.useState([])
+    const {id} = useParams()
 
     useEffect(() => {
         loadStudents()
@@ -17,18 +19,15 @@ export default function StudentTable() {
     }
 
     const deleteStudent = async(id) => {
-        const result = await axios.delete(`http://localhost:8080/api/v1/student/${id}`, id)
-        setStudent(result.data)
+        const result = await axios.delete(`http://localhost:8080/api/v1/student/${id}`)
+        loadStudents()
     }
 
-    const handleDeleteAll:React.MouseEventHandler<HTMLButtonElement> = (e) => {
-        e.preventDefault()
-        deleteStudent()
-    }
+
   return (
     <>
-    <div className="">
-  <table className="tableStud w-75 mx-auto table-bordered">
+    <div className="tableStud ">
+  <table className="w-100 table-bordered">
     <thead className="thead-dark">
       <tr>
         <th scope="col">Name</th>
@@ -44,7 +43,7 @@ export default function StudentTable() {
             <td>{stud.name}</td>
             <td>{stud.email}</td>
             <td>{stud.age}</td>
-            <td><button className='btn btn-primary m-1'>Edit</button><button className='btn btn-success m-1'>View</button><button className='btn btn-danger m-1' onClick={handleDeleteAll}>Delete</button></td>
+            <td><Link to={`/edit/${stud.id}`}><button className='btn btn-primary m-1'>Edit</button></Link><Link to={`/view/${stud.id}`}><button className='btn btn-success m-1'>View</button></Link><button className='btn btn-danger m-1' onClick={() => deleteStudent(stud.id)}>Delete</button></td>
           </tr>
         ))
         }
